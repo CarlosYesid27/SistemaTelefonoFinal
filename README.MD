@@ -9,7 +9,7 @@ Se desarrollo un sistema **CRUD** que permite mantener el control y registro de 
 - **Entorno de desarrollo todo en uno:** XAMPP, WAMPP u otra alternativa.
 
 
-## Instruciones de para la descarga e instalacion
+## Instruciones para la descarga e instalacion
 
 1. **Descarga el proyecto** Clona el siguiente repositorio o descargalo como archivo ZIP.
 
