@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(120deg, #e0e7ff 0%, #f0fdfa 100%);
+            min-height: 100vh;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .inicio-container {
+            background: rgba(255,255,255,0.97);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+            padding: 2.5rem 2.5rem 2rem 2.5rem;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        .inicio-container h1 {
+            color: #2563eb;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+        .inicio-container h1::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #6366f1 0%, #06b6d4 100%);
+            border-radius: 2px;
+            margin: 0.5rem auto 0 auto;
+        }
+        .inicio-container img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.13);
+            border: 2px solid #e0e7ff;
+            background: #fff;
+        }
+        .inicio-container a {
+            display: block;
+            margin: 1rem auto 0 auto;
+            width: 80%;
+            padding: 0.7rem 0;
+            border-radius: 10px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color: #fff;
+            background: linear-gradient(90deg, #6366f1 0%, #06b6d4 100%);
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.13);
+            transition: background 0.3s, transform 0.2s;
+        }
+        .inicio-container a:hover {
+            background: linear-gradient(90deg, #06b6d4 0%, #6366f1 100%);
+            transform: translateY(-2px) scale(1.04);
+        }
+    </style>
+</head>
+<body>
+    <div class="inicio-container">
+        <h1>Bienvenido a RegisterCell</h1>
+        <img src="https://videos.openai.com/vg-assets/assets%2Ftask_01jwajgxhnfhmv1t2a0t2a2qw1%2F1748406721_img_1.webp?st=2025-05-28T03%3A31%3A12Z&se=2025-06-03T04%3A31%3A12Z&sks=b&skt=2025-05-28T03%3A31%3A12Z&ske=2025-06-03T04%3A31%3A12Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=3d249c53-07fa-4ba4-9b65-0bf8eb4ea46a&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=E09Taolk1v03ZtmKwTC3rfdXsdDWBy9VfsoTe5h46dI%3D&az=oaivgprodscus" alt="Logo">
+        <a href="{{url_for('login')}}">Iniciar Sesión</a>
+        <a href="{{url_for('register')}}">Registrarse</a>
+    </div>
+</body>
+</html>

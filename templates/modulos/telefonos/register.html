@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(120deg, #e0e7ff 0%, #f0fdfa 100%);
+            min-height: 100vh;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .register-container {
+            background: rgba(255,255,255,0.97);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+            padding: 2.5rem 2.5rem 2rem 2.5rem;
+            text-align: center;
+            max-width: 370px;
+            width: 100%;
+        }
+        .register-container h2 {
+            color: #2563eb;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+        .register-container h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #6366f1 0%, #06b6d4 100%);
+            border-radius: 2px;
+            margin: 0.5rem auto 0 auto;
+        }
+        .register-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        .register-container label {
+            text-align: left;
+            color: #2563eb;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+        .register-container input[type="text"],
+        .register-container input[type="password"] {
+            border-radius: 8px;
+            border: 1.5px solid #06b6d4;
+            padding: 0.6em 1em;
+            background: #f0fdfa;
+            font-size: 1rem;
+            transition: border 0.2s, box-shadow 0.2s;
+        }
+        .register-container input[type="text"]:focus,
+        .register-container input[type="password"]:focus {
+            border-color: #6366f1;
+            box-shadow: 0 0 0 2px #a5b4fc44;
+            outline: none;
+        }
+        .register-container button[type="submit"] {
+            background: linear-gradient(90deg, #6366f1 0%, #06b6d4 100%);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 0.7rem 0;
+            font-weight: 500;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.13);
+            transition: background 0.3s, transform 0.2s;
+            cursor: pointer;
+        }
+        .register-container button[type="submit"]:hover {
+            background: linear-gradient(90deg, #06b6d4 0%, #6366f1 100%);
+            transform: translateY(-2px) scale(1.04);
+        }
+        .register-container .error {
+            color: #ef4444;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        .register-container .login-link {
+            display: block;
+            margin-top: 1.2rem;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .register-container .login-link:hover {
+            color: #06b6d4;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h2>Registrar usuario</h2>
+        <form method="POST" action="{{ url_for('register') }}" autocomplete="off">
+            <div>
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username" required autocomplete="off">
+            </div>
+            <div>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required autocomplete="new-password">
+            </div>
+            <button type="submit">Registrar</button>
+        </form>
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+        <a class="login-link" href="{{url_for('login')}}">¿Ya tienes una cuenta? ¡Inicia sesión aquí!</a>
+    </div>
+</body>
+</html>
